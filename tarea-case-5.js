@@ -7,10 +7,11 @@ $botonCalcular.onclick = function() {
   const MESES_EN_UN_ANIO = 12;
   let salarioMensual = Number(inputSalario.value) / MESES_EN_UN_ANIO;
   document.querySelector(".resultado-calculo").value = salarioMensual;
+  salarioMensual = Math.trunc(salarioMensual);
     if(salarioMensual <= 100000){
       imagen.setAttribute("src", "img/sad_penguin.gif");
       textoImagen.textContent = `Cobrás $ ${salarioMensual} por mes. Cómo hacés para vivir?`;
-    } else if (salarioMensual > 100001 && salarioMensual < 499999) {
+    } else if (salarioMensual >= 100001 && salarioMensual <= 500000) {
         imagen.setAttribute("src", "img/woman_meme.png");
         textoImagen.textContent = `Cobrás $ ${salarioMensual} por mes. Nada mal, eh!`;
     } else {
